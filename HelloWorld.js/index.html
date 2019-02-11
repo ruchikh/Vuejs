@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World</title>
+</head>
+<body>
+
+<!-- 	<div id="app">
+	  <p>{{ message }}</p>
+	  <button v-on:click="reverseMessage">Reverse Message</button>
+	</div>
+
+
+
+	<div id="app2">
+		<span v-bind:title="message">
+			Hover your mouse over me for a few seconds
+    	to see my dynamically bound title!	
+		</span>	
+	</div>
+
+	<div id="app3">
+		<span v-if="seen">Now you see me</span>
+	</div>
+
+	<div id="app4">
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}		
+			</li>
+		</ol>		
+	</div>
+
+	<div id="app6">
+		<p>{{ message }}</p>
+		<input v-model="message">	
+	</div>
+
+	<div>
+		<ol id="app7">
+			<todo-item
+			v-for="item in groceryList"
+			v-bind:todo="item"
+			v-bind:key="item.id"
+			></todo-item>
+		</ol>
+	</div> -->
+
+
+	<div id="app8">
+    <h1>Bitcoin Price Index</h1>
+  <div v-for="currency in info" class="currency"> {{ currency.description }}:
+    <span class="">
+      <span v-html=""></span>{{ currency.disclaimer }}
+    </span>
+    <span class="lighten">
+      <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
+    </span>
+  </div>
+	</div>
+
+
+	<div id="todo-list">
+		<form v-on:submit.prevent="addNewTodo">
+			<label for="new=todo">Add Todo</label>
+			<input type="text" v-model="newTodoText" placeholder="Feed the world" />
+			<button>Add</button>
+		</form>
+
+		<ul>
+			<li 
+			is="todo-item" 
+			v-for="(todo, index) in todos" 
+			v-bind:key='todo.id'
+			v-bind:title="todo.title"
+			v-on:remove="todos.splice(index, 1)"
+			>
+			</li>
+			<button @click="RemoveAll()">RemoveAll</button>
+		</ul>
+	</div>
+
+
+ <div id="app9">
+
+ 	<div class="product">
+ 		<div class="product-img">
+ 			<img v-bind:src="image">	
+		</div>
+		<div>
+			<span>Size Available:</span>
+			<span v-for="size in sizes">
+				{{ size }}
+			</span>
+		</div>
+
+		<div class="product-info">
+			<h1>{{ product }}</h1>
+			<p v-if="inStock">In Stock</p>
+			<p v-else>Out of Stock</p>
+
+			<ul>
+				<li v-for="detail in details"> {{detail}}	
+				</li>
+			</ul>
+
+			<button v-on:click="cart += 1">Add to cart</button>
+
+			<div class="cart">
+				<p>Cart({{cart}})</p>
+				
+			</div>
+
+		</div>
+
+ 	</div>
+ 	
+ </div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="vue.js"></script>
+
+	<style>
+	#app8{
+		max-width: 1100px;
+		width: 50%;
+		margin: 0 auto;
+		font-weight: 600;
+		font-size: 20px;
+		background: #c2c4c6;
+		padding: 30px;
+		letter-spacing: 1.5px;
+		color: white;
+	}
+
+	.currency{
+		background: #1e1b38;
+		padding: 15px 5px;
+	}
+
+
+</style>
+</body>
+</html>
